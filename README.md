@@ -31,21 +31,20 @@ I had a lot of fun going through the work sample. As always, I always try to kee
 
 🧰 Tech used
 
-* react
-* vite
-* typescript
-* tailwindcss
+* React
+* Vite
+* Typescript
+* Tailwindcss
 * Zustand
-* ua-parser-js
 
 📈 The approach I used: 
 
 1. setup app (vite, tailwind..)
 2. Create preview component and style it. At this stage, the component displays a hard-coded funnel object. This decreases the scope and complexity. It allows me to focus on building a modular & reusable component. 
 3. Create Funnel Picker Page and style it
-4. Use the zustand libary to create a very minimal "navigation".
+4. Use the zustand libary to create a very minimal "navigation" mechanism.
 5. Add a "fancy" topbar, that gives the user the chance to change the active funnel with a newly uploaded file.
-6. Created few reusable hooks.
+6. Created few reusable hooks and worked on decreasing the overall code complexity and increasing readability.  
 7. Added the bonus feature 'MOBILE VIEW MODE‘
 # 
 <p align="center">
