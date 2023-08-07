@@ -6,7 +6,7 @@ interface Props {
   size?: "text-xs" | "text-xl";
   bgColor?: string;
 }
-const Button: FC<Props> = ({ onClick, text, size, bgColor }) => {
+const Button: FC<Props> = ({ onClick, text }) => {
   return (
     <button
       onClick={() => {
