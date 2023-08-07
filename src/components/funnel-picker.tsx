@@ -22,11 +22,11 @@ const FunnelPicker = () => {
           }}
         />
         <span
-          className=" animate-bounce hover:shadow-l hover:font-bold font-semibold text-lg  font-inter shadow-sm   rounded-xl text-black py-4 px-3 text-center cursor-pointer"
+          className=" animate-pulse-slow hover:shadow-l hover:font-bold font-semibold text-lg  font-inter shadow-sm   rounded-xl text-black py-4 px-3 text-center cursor-pointer"
           onClick={() => set_Funnel(mockFunnel as Funnel)}
         >
-          You don't have a file? <br /> I got you.🌻 Click here to proceed with
-          a pre-built sample file.
+          No json file on hand? <br /> I got you.🌻 Click here to proceed with a
+          pre-built sample Funnel🌈.
         </span>
       </div>
     </div>
