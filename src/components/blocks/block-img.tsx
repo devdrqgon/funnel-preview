@@ -5,9 +5,11 @@ interface Props {
 }
 const BlockImg: FC<Props> = ({ block }) => {
   return (
-    <div>
-      <img src={block?.src} alt="blockImg" />
-    </div>
+    <img
+      className="rounded-2xl object-fit sm:w-6/12"
+      src={block?.src}
+      alt="blockImg"
+    />
   );
 };
 

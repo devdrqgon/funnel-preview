@@ -3,10 +3,6 @@ export default {
   mode: 'jit',
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    screens: {
-        tablet: '960px',
-        desktop: '1248px'
-    },
     colors: {
         white: '#FEF8EB',
         'copper-rust': '#78DCCA',

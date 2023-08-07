@@ -8,7 +8,7 @@ interface Page {
     blocks: Array<BlockText |BlockImg | BlockList |BlockButton>
 }
 
-type BlockBase = {
+type BlockBase= {
     id: string
     type: BlockTypes
 }
@@ -33,7 +33,7 @@ interface BlockList extends BlockBase{
 interface BlockListItemData {
     title: string,
     description: string,
-    src: string
+    src: string,
 }
 
 interface BlockButton extends BlockBase{

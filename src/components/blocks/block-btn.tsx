@@ -4,7 +4,16 @@ interface Props {
   block: BlockButton;
 }
 const BlockButton: FC<Props> = ({ block }) => {
-  return <button style={{ background: block?.bgColor }}>{block.text}</button>;
+  return (
+    <button
+      style={{ background: block.bgColor }}
+      className={`rounded-full  px-6 pb-2 pt-2.5  text-lg font-medium  text-white 
+      shadow-[0_4px_9px_-4px_#3b71ca]
+       bg-[${block.bgColor}]`}
+    >
+      {block.text}
+    </button>
+  );
 };
 
 export default BlockButton;
