@@ -13,9 +13,6 @@ export default {
         'blood-orange': '#E76F51',
         'dark-blue':'#131011',
         blue: '#0076ff',
-
-
-
     },
     extend: {
        keyframes: {

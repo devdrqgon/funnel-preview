@@ -9,7 +9,7 @@ const BlockList: FC<Props> = ({ block }) => {
       {block.items.map((item, i) => (
         <div
           key={i}
-          className={`border-2 border-dotted border-[#2f4a54]  min-w-full pr-5 pt-2 flex gap-4  rounded-lg shadow-md  `}
+          className={`flex gap-4 items-center border-2 border-dotted border-[#2f4a54]  min-w-full pr-5 py-2   rounded-lg shadow-md  `}
         >
           <img
             className="object-cover bg-white m-2 rounded-md"

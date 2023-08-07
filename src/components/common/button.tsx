@@ -1,24 +1,37 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 
+interface BgColor {
+  mainColor: string;
+  colorOnHover?: string;
+}
 interface Props {
   onClick?: () => void;
   text: string;
   size?: "text-xs" | "text-xl";
-  bgColor?: string;
+  bgColor?: BgColor;
+  textColor?: "black" | "white";
 }
-const Button: FC<Props> = ({ onClick, text, size, bgColor }) => {
+const Button: FC<Props> = ({ onClick, text, size, bgColor, textColor }) => {
+  const [isHovered, setisHovered] = useState(false);
   return (
     <button
+      onMouseEnter={() => setisHovered(true)}
+      onMouseLeave={() => setisHovered(false)}
       onClick={() => {
         if (onClick) {
           onClick();
         }
       }}
       // className="bg-[#007aff] text-xl font-semibold  font-inter shadow-sm  rounded-xl text-white py-4 px-8 text-center hover:bg-[#133DF6]"
-      style={{ background: bgColor || "#133DF6" }}
+      style={{
+        background:
+          isHovered && bgColor.colorOnHover
+            ? bgColor.colorOnHover
+            : bgColor.mainColor,
+        color: textColor || "white",
+      }}
       className={` ${size || "text-xl"}
-
-       font-semibold  font-inter shadow-sm  rounded-xl text-white py-4 px-3 text-center hover:bg-[#133DF6] `}
+       font-semibold  font-inter shadow-sm   rounded-xl text-white py-4 px-3 text-center`}
     >
       {text}
     </button>
@@ -26,12 +39,3 @@ const Button: FC<Props> = ({ onClick, text, size, bgColor }) => {
 };
 
 export default Button;
-
-// <button
-//   style={{
-//     backgroundColor: block?.bgColor || "#0076ff", //not sure  why but tailwind is having problems applying a dynamic background color, so to win time Iam using inline styles. in real life situation, I would investigate further.
-//   }}
-//   className="bg-[#007aff] text-l font-semibold  font-inter shadow-sm  rounded-xl text-white py-4 px-8 text-center hover:bg-[#133DF6]"
-// >
-//   {block.text}
-// </button>;

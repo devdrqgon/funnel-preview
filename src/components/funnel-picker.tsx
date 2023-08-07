@@ -1,7 +1,4 @@
-import { useRef, useState } from "react";
 import PerspectiveLogo from "./../assets/perspective-logo.png";
-import Preview from "./funnel-preview";
-import Button from "./common/button";
 import { useFunnel } from "./hooks/useFunnel";
 import UploadButton from "./common/upload-funnel-button";
 

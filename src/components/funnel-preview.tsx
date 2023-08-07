@@ -44,8 +44,12 @@ const Preview: FC = () => {
                     ? "Activate Mobile View"
                     : "Exit Mobile View"
                 }
-                bgColor={!isMobilePreviewMode ? "green" : "red"}
-                size="text-xs"
+                bgColor={{
+                  mainColor: !isMobilePreviewMode ? "#e9ff70" : "#FB3772",
+                  colorOnHover: !isMobilePreviewMode ? "#E3FF47" : "#DC0445",
+                }}
+                textColor={"black"}
+                size="text-xl"
                 onClick={() => {
                   set_isMobilePreviewMode(!isMobilePreviewMode);
                 }}
@@ -55,7 +59,7 @@ const Preview: FC = () => {
             <UploadButton
               label="Upload a new Funnel"
               bgColor="#0076ff"
-              size="text-xs"
+              size="text-xl"
               onFileUploadedCb={(funnel: Funnel) => {
                 set_Funnel(funnel);
               }}

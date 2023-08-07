@@ -7,12 +7,7 @@ interface Props {
   bgColor?: string;
   onFileUploadedCb: (funnel: Funnel) => void;
 }
-const UploadButton: FC<Props> = ({
-  label,
-  onFileUploadedCb,
-  size,
-  bgColor,
-}) => {
+const UploadButton: FC<Props> = ({ label, onFileUploadedCb, size }) => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const parseFunnel = (event: ProgressEvent<FileReader>) => {
     if (event?.target?.result) {
@@ -37,7 +32,10 @@ const UploadButton: FC<Props> = ({
     <>
       <div>
         <Button
-          bgColor={bgColor || "#023047"}
+          bgColor={{
+            mainColor: "#00b4d8",
+            colorOnHover: "#0077b6",
+          }}
           size={size}
           onClick={() => {
             fileInputRef?.current?.click(); //this triggers the onClick event of our hidden upload element
