@@ -31,12 +31,11 @@ I had a lot of fun going through the work sample. As always, I always try to kee
 
 🧰 Tech used
 
-* react
-* vite
-* typescript
-* tailwindcss
+* React
+* Vite
+* Typescript
+* Tailwindcss
 * Zustand
-* ua-parser-js
 
 📈 The approach I used: 
 
