@@ -6,9 +6,11 @@ interface Props {
 const BlockText: FC<Props> = ({ block }) => {
   return (
     <div
-      className={`text-2xl bg-[${block?.color || "black"}] self-${
-        block?.align || "center"
-      } font-semibold `}
+      style={{
+        color: block?.color || "black",
+        alignSelf: block?.align || "center",
+      }}
+      className={`text-2xl self-center font-semibold `}
     >
       {block.text}
     </div>
