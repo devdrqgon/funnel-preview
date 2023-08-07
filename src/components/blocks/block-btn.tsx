@@ -1,14 +1,19 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 interface Props {
   block: BlockButton;
 }
 const BlockButton: FC<Props> = ({ block }) => {
+  useEffect(() => {
+    console.info("block", block.bgColor);
+  }, [block]);
+
   return (
     <button
-      className={`rounded-full  px-6 pb-2 pt-2.5  text-lg font-medium  text-white 
-      shadow-[0_4px_9px_-4px_#3b71ca]
-       bg-[${block.bgColor}]`}
+      style={{
+        backgroundColor: block?.bgColor || "#0076ff", //not sure  why but tailwind is having problems applying a dynamic background color, so to win time Iam using inline styles. in real life situation, I would investigate further.
+      }}
+      className="bg-[#007aff] text-l font-semibold  font-inter shadow-sm  rounded-xl text-white py-4 px-8 text-center hover:bg-[#133DF6]  hover:transition-colors"
     >
       {block.text}
     </button>

@@ -3,6 +3,11 @@
 type BlockTypes= 'text' | 'image' | 'list' | 'button'
 
 
+interface Funnel {
+    name: string
+    bgColor:string
+    pages: Array<Page>
+}
 interface Page {
     id: string
     blocks: Array<BlockText |BlockImg | BlockList |BlockButton>

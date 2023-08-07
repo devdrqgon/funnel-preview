@@ -1,26 +1,43 @@
-import { useEffect, useState } from "react";
-import funnel from "./../../temp-input.json";
+import { FC, useEffect } from "react";
 import Page from "../page";
-import FunnelPicker from "../funnel-picker";
-const Preview = () => {
-  // const [previewFile, set_previewFile] = useState(null);
-  const [funnelIsLoaded] = useState(false); //TODO: temp
 
-  useEffect(() => {
-    console.info("funnel", funnel);
-  }, []);
-
-  if (!funnelIsLoaded) return <FunnelPicker />;
-
+interface Props {
+  funnel?: Funnel;
+  onClose?: () => void;
+}
+const Preview: FC<Props> = ({ funnel, onClose }) => {
   //Set Body BackgroundColor based on the funnel backgroundColor
   useEffect(() => {
     document.body.style.backgroundColor = funnel?.bgColor || "#FFF";
   }, []);
+
+  if (!funnel) return <></>;
   return (
-    <div className="flex flex-col items-center gap-8 h-full p-4">
-      {funnel.pages.map((p) => (
-        <Page p={p as Page} />
-      ))}
+    <div>
+      <div className="px-2 text-base font-normal gradient py-4 flex w-full justify-center bg-[#53D3F4] text-center font-inter">
+        <span className=" mx-2 font-inter font-semibold">
+          Previewing {funnel?.name}.
+        </span>
+        <div>
+          Want to try a different one? Then click
+          <span
+            className="ml-1 text-blood-orange cursor-pointer underline"
+            onClick={() => {
+              alert("soon");
+            }}
+          >
+            here
+          </span>
+          .
+        </div>
+      </div>
+      <div className="flex flex-col items-center gap-8 h-full p-4">
+        <>
+          {funnel?.pages.map((p, i) => (
+            <Page key={i} p={p as Page} />
+          ))}
+        </>
+      </div>
     </div>
   );
 };
