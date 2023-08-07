@@ -4,7 +4,7 @@ import Page from "../page";
 import FunnelPicker from "../funnel-picker";
 const Preview = () => {
   // const [previewFile, set_previewFile] = useState(null);
-  const [funnelIsLoaded] = useState(true);
+  const [funnelIsLoaded] = useState(false); //TODO: temp
 
   useEffect(() => {
     console.info("funnel", funnel);
