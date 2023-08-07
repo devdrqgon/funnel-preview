@@ -7,6 +7,9 @@
     <br>
     <br>
     <a href="https://ahmed-mouelhi-funnel-preview.vercel.app">➡️ https://ahmed-mouelhi-funnel-preview.vercel.app</a>
+    <br>
+    <br>
+    <a href="https://www.linkedin.com/in/mouelhiahmed">➡️ https://www.linkedin.com/in/mouelhiahmed </a>
 </p>
 
 ___
