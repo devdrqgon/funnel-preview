@@ -1,8 +1,8 @@
 import { FC } from "react";
-import BlockText from "./block-text";
-import BlockImg from "./block-img";
-import BlockList from "./block-list";
-import BlockButton from "./block-btn";
+import BlockText from "./blocks/block-text";
+import BlockImg from "./blocks/block-img";
+import BlockList from "./blocks/block-list";
+import BlockButton from "./blocks/block-btn";
 
 interface Props {
   block: BlockText | BlockImg | BlockButton | BlockList;

@@ -1,21 +1,23 @@
 import { useRef, useState } from "react";
 import PerspectiveLogo from "./../assets/perspective-logo.png";
-import Preview from "./blocks/preview";
+import Preview from "./funnel-preview";
 import Button from "./common/button";
+import { useFunnel } from "./hooks/useFunnel";
 
 const FunnelPicker = () => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const [funnel, set_funnel] = useState<Funnel | null>(null);
-  function parseFunnel(event: ProgressEvent<FileReader>) {
+
+  const set_Funnel = useFunnel((state) => state.setFunnel);
+  const parseFunnel = (event: ProgressEvent<FileReader>) => {
     if (event?.target?.result) {
       const funnel: Funnel = JSON.parse(event.target.result as string);
       if (!funnel.pages || !funnel.bgColor || !funnel.name) {
         alert(
           "Your funnel file schema seems to be invalid. Fix the issue and Try Again!"
         ); //simple quick-user-feedback solution when upload fails to not increase the scope further. For quick user-feedback, I usually use https://react-hot-toast.com/
-      } else set_funnel(funnel);
+      } else set_Funnel(funnel);
     }
-  }
+  };
 
   const handleFunnelUpload = (file: File) => {
     // Create a new FileReader() object
@@ -25,8 +27,6 @@ const FunnelPicker = () => {
     // Read the file
     reader.readAsText(file);
   };
-
-  if (funnel) return <Preview funnel={funnel} />;
 
   return (
     <div className="w-full h-screen bg-[white] flex flex-col items-center justify-center">

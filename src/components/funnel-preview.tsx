@@ -1,19 +1,17 @@
 import { FC, useEffect } from "react";
-import Page from "../page";
-import PerspectiveLogo from "./../../assets/perspective-logo.png";
-import Button from "../common/button";
+import Page from "./page";
+import PerspectiveLogo from "./../assets/perspective-logo.png";
+import Button from "./common/button";
+import { useFunnel } from "./hooks/useFunnel";
 
-interface Props {
-  funnel?: Funnel;
-}
-const Preview: FC<Props> = ({ funnel }) => {
+const Preview: FC = () => {
+  const funnel = useFunnel((state) => state.funnel);
   //Set Body BackgroundColor based on the funnel backgroundColor
   useEffect(() => {
     document.body.style.backgroundColor = funnel?.bgColor || "#FFF";
   }, [funnel?.bgColor]);
 
   //  bg - [#B330FE];
-  if (!funnel) return <></>;
   return (
     <>
       <div className="z-50 text-white fixed top-0 left-0 w-full py-4 flex flex-col justify-center backdrop-blur border-b border-b-gray-500/40 dark:border-b-white/30 font-medium dark:font-normal bg-gray-800/40">

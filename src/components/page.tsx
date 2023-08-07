@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import BlocksRenderer from "./blocks/blocks-renderer";
+import BlocksRenderer from "./blocks-renderer";
 
 interface Props {
   p: Page;
