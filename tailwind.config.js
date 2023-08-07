@@ -18,7 +18,7 @@ export default {
        keyframes: {
         'pulse-slow': {
           '0%, 100%': { transform: 'none' },
-          '50%': { transform: 'scale(.85)' },
+          '50%': { transform: 'scale(.95)' },
         },
       },
       animation: {

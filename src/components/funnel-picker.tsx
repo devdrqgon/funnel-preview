@@ -1,7 +1,7 @@
 import PerspectiveLogo from "./../assets/perspective-logo.png";
 import { useFunnel } from "./hooks/useFunnel";
 import UploadButton from "./common/upload-funnel-button";
-
+import mockFunnel from "./../temp-input.json";
 const FunnelPicker = () => {
   const set_Funnel = useFunnel((state) => state.setFunnel);
 
@@ -12,14 +12,23 @@ const FunnelPicker = () => {
         src={PerspectiveLogo}
         alt="perspective-logo"
       />
-      <UploadButton
-        label="Upload a new Funnel"
-        bgColor="#0076ff"
-        size="text-xl"
-        onFileUploadedCb={(funnel: Funnel) => {
-          set_Funnel(funnel);
-        }}
-      />
+      <div className="flex flex-col  gap-40 justify-center items-center">
+        <UploadButton
+          label="Upload a new Funnel"
+          bgColor="#0076ff"
+          size="text-xl"
+          onFileUploadedCb={(funnel: Funnel) => {
+            set_Funnel(funnel);
+          }}
+        />
+        <span
+          className=" animate-bounce hover:shadow-l hover:font-bold font-semibold text-lg  font-inter shadow-sm   rounded-xl text-black py-4 px-3 text-center cursor-pointer"
+          onClick={() => set_Funnel(mockFunnel as Funnel)}
+        >
+          You don't have a file? <br /> I got you.🌻 Click here to proceed with
+          a pre-built sample file.
+        </span>
+      </div>
     </div>
   );
 };

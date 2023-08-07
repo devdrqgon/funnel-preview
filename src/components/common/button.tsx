@@ -27,7 +27,7 @@ const Button: FC<Props> = ({ onClick, text, size, bgColor, textColor }) => {
         background:
           isHovered && bgColor.colorOnHover
             ? bgColor.colorOnHover
-            : bgColor.mainColor,
+            : bgColor?.mainColor || "#007aff",
         color: textColor || "white",
       }}
       className={` ${size || "text-xl"}
