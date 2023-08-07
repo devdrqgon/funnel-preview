@@ -49,7 +49,7 @@ const Preview: FC = () => {
                   colorOnHover: !isMobilePreviewMode ? "#E3FF47" : "#DC0445",
                 }}
                 textColor={"black"}
-                size="text-xl"
+                size="text-xs"
                 onClick={() => {
                   set_isMobilePreviewMode(!isMobilePreviewMode);
                 }}
@@ -59,7 +59,7 @@ const Preview: FC = () => {
             <UploadButton
               label="Upload a new Funnel"
               bgColor="#0076ff"
-              size="text-xl"
+              size="text-xs"
               onFileUploadedCb={(funnel: Funnel) => {
                 set_Funnel(funnel);
               }}
