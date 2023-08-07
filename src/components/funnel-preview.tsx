@@ -73,11 +73,7 @@ const Preview: FC = () => {
       >
         <>
           {funnel?.pages.map((p, i) => (
-            <Page
-              key={i}
-              page={p as Page}
-              isMobilePreviewMode={isMobilePreviewMode} //on true, the page component shrinks in width 384px
-            />
+            <Page key={i} page={p as Page} />
           ))}
         </>
       </div>
