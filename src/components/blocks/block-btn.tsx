@@ -1,13 +1,9 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 
 interface Props {
   block: BlockButton;
 }
 const BlockButton: FC<Props> = ({ block }) => {
-  useEffect(() => {
-    console.info("block", block.bgColor);
-  }, [block]);
-
   return (
     <button
       style={{

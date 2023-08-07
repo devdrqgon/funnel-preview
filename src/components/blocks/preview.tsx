@@ -3,13 +3,12 @@ import Page from "../page";
 
 interface Props {
   funnel?: Funnel;
-  onClose?: () => void;
 }
-const Preview: FC<Props> = ({ funnel, onClose }) => {
+const Preview: FC<Props> = ({ funnel }) => {
   //Set Body BackgroundColor based on the funnel backgroundColor
   useEffect(() => {
     document.body.style.backgroundColor = funnel?.bgColor || "#FFF";
-  }, []);
+  }, [funnel?.bgColor]);
 
   if (!funnel) return <></>;
   return (

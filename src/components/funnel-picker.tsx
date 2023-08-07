@@ -16,9 +16,9 @@ const FunnelPicker = () => {
     }
   }
 
-  const onClosePreview = () => {
-    set_funnel(null);
-  };
+  // const onClosePreview = () => {
+  //   set_funnel(null);
+  // };
 
   const handleFunnelUpload = (file: File) => {
     // Create a new FileReader() object
@@ -62,7 +62,7 @@ const FunnelPicker = () => {
       </div>
     );
 
-  return <Preview onClose={onClosePreview} funnel={funnel} />;
+  return <Preview funnel={funnel} />;
 };
 
 export default FunnelPicker;
