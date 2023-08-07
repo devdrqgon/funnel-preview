@@ -23,7 +23,8 @@ export default {
       },
       animation: {
         'pulse-slow': 'pulse-slow 2s 1s ease-out infinite',
-      }
+      },
+      
     },
   },
   plugins: [],

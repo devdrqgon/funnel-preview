@@ -4,13 +4,15 @@ import PerspectiveLogo from "./../assets/perspective-logo.png";
 import Button from "./common/button";
 import { useFunnel } from "./hooks/useFunnel";
 import UploadButton from "./common/upload-funnel-button";
-import useDeviceInfo from "./hooks/useDeviceInfo";
+// import useDeviceInfo from "./hooks/useDeviceInfo";
 
 const Preview: FC = () => {
+  //Funnel State
   const funnel = useFunnel((state) => state.funnel);
   const set_Funnel = useFunnel((state) => state.setFunnel);
+
+  //UI state
   const [isMobilePreviewMode, set_isMobilePreviewMode] = useState(false);
-  const { isMobileDevice } = useDeviceInfo();
 
   //Set Body BackgroundColor based on the funnel backgroundColor
   useEffect(() => {
@@ -18,8 +20,6 @@ const Preview: FC = () => {
       ? "#e9ecef"
       : funnel?.bgColor || "#FFF";
   }, [funnel?.bgColor, isMobilePreviewMode]);
-
-  //  bg-[${isMobilePreviewMode ? "black" : funnel.bgColor}]
 
   return (
     <>
@@ -37,7 +37,7 @@ const Preview: FC = () => {
             </span>
           </div>
           <div className="flex gap-2">
-            {!isMobileDevice && (
+            <span className="max-[800px]:hidden">
               <Button
                 text={
                   !isMobilePreviewMode
@@ -54,8 +54,7 @@ const Preview: FC = () => {
                   set_isMobilePreviewMode(!isMobilePreviewMode);
                 }}
               />
-            )}
-
+            </span>
             <UploadButton
               label="Upload a new Funnel"
               bgColor="#0076ff"
