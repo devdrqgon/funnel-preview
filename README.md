@@ -1,3 +1,16 @@
+<p align="center">
+   <img src="docAssets/big-screen-normal.png" height="200" />
+    <img src="docAssets/big-screen-mobile-view-on.png" height="200" />
+    <br>
+    <br>
+    <b>Work sample for Perspective.</b>
+    <br>
+    <br>
+    <a href="https://ahmed-mouelhi-funnel-preview.vercel.app">➡️ https://ahmed-mouelhi-funnel-preview.vercel.app</a>
+</p>
+
+___
+
 # 🐈  Hi @Perspective!
 
 I had a lot of fun going through the work sample. As always, I always try to keep my apps code and architecture as simple and straightforward as possible;  **IIWYNI** (Implement It When You Need It 😉).
