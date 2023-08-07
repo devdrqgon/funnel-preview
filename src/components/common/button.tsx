@@ -6,7 +6,7 @@ interface Props {
   size?: "text-xs" | "text-xl";
   bgColor?: string;
 }
-const Button: FC<Props> = ({ onClick, text }) => {
+const Button: FC<Props> = ({ onClick, text, size, bgColor }) => {
   return (
     <button
       onClick={() => {
@@ -14,11 +14,11 @@ const Button: FC<Props> = ({ onClick, text }) => {
           onClick();
         }
       }}
-      className="bg-[#007aff] text-xl font-semibold  font-inter shadow-sm  rounded-xl text-white py-4 px-8 text-center hover:bg-[#133DF6]"
+      // className="bg-[#007aff] text-xl font-semibold  font-inter shadow-sm  rounded-xl text-white py-4 px-8 text-center hover:bg-[#133DF6]"
+      style={{ background: bgColor || "#133DF6" }}
+      className={` ${size || "text-xl"}
 
-      // className={` ${size || "text-xl"}
-
-      //  font-semibold  font-inter shadow-sm  rounded-xl text-white py-4 px-3 text-center hover:bg-[#133DF6] `}
+       font-semibold  font-inter shadow-sm  rounded-xl text-white py-4 px-3 text-center hover:bg-[#133DF6] `}
     >
       {text}
     </button>

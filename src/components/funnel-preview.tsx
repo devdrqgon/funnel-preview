@@ -3,15 +3,17 @@ import Page from "./page";
 import PerspectiveLogo from "./../assets/perspective-logo.png";
 import Button from "./common/button";
 import { useFunnel } from "./hooks/useFunnel";
+import UploadButton from "./common/upload-funnel-button";
 
 const Preview: FC = () => {
   const funnel = useFunnel((state) => state.funnel);
+  const set_Funnel = useFunnel((state) => state.setFunnel);
+
   //Set Body BackgroundColor based on the funnel backgroundColor
   useEffect(() => {
     document.body.style.backgroundColor = funnel?.bgColor || "#FFF";
   }, [funnel?.bgColor]);
 
-  //  bg - [#B330FE];
   return (
     <>
       <div className="z-50 text-white fixed top-0 left-0 w-full py-4 flex flex-col justify-center backdrop-blur border-b border-b-gray-500/40 dark:border-b-white/30 font-medium dark:font-normal bg-gray-800/40">
@@ -27,13 +29,13 @@ const Preview: FC = () => {
             </span>
           </div>
           <div>
-            <Button
-              bgColor="#023047"
+            <UploadButton
+              label="Upload a new Funnel"
+              bgColor="#0076ff"
               size="text-xs"
-              onClick={() => {
-                alert("soon");
+              onFileUploadedCb={(funnel: Funnel) => {
+                set_Funnel(funnel);
               }}
-              text=" New Funnel"
             />
           </div>
         </div>
