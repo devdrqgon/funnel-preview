@@ -2,13 +2,14 @@ import React, { FC } from "react";
 import BlocksRenderer from "./blocks-renderer";
 
 interface Props {
-  p: Page;
+  page: Page;
+  isMobilePreviewMode?: boolean;
 }
 
-const Page: FC<Props> = ({ p }) => {
+const Page: FC<Props> = ({ page, isMobilePreviewMode = false }) => {
   return (
-    <div className="w-full flex flex-col  items-center gap-8">
-      {p.blocks.map((b, i) => (
+    <div className=" flex flex-col  items-center gap-8">
+      {page.blocks.map((b, i) => (
         <BlocksRenderer key={i} block={b} />
       ))}
     </div>

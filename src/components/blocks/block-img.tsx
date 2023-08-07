@@ -6,7 +6,7 @@ interface Props {
 const BlockImg: FC<Props> = ({ block }) => {
   return (
     <img
-      className="rounded-2xl object-fit sm:w-6/12"
+      className="rounded-2xl object-fit  w-[50%]"
       src={block?.src}
       alt="blockImg"
     />
