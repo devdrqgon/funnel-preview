@@ -27,10 +27,11 @@ I had a lot of fun going through the work sample. As always, I always try to kee
 - ✅ Change Funnel file and see UI displaying the new Funnel
 - ✅ The app is hosted on Vercel
 
-🎁 Implemented Must-Have Features.
+🎁 Implemented Nice-To-Have Features.
 
 - ✅ Mobile View Mode: Saves you the hastle to right click and inspect your browser, instead jus click on the feature button, and the UI will adapt itself. 🥰
 - ✅ Basic file  schema validation upon uploading a file.
+- ✅ The app supports mobile screens.
 
 🧰 Tech used
 
