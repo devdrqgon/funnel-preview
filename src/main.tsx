@@ -9,6 +9,6 @@ import Preview from "./components/blocks/preview.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <FunnelPicker />
-    {/* <Preview funnel={funnel as Funnel} /> just for quick testing */}
+    {/* <Preview funnel={funnel as Funnel} /> */}
   </React.StrictMode>
 );

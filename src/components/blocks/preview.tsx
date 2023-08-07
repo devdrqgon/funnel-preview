@@ -1,5 +1,7 @@
 import { FC, useEffect } from "react";
 import Page from "../page";
+import PerspectiveLogo from "./../../assets/perspective-logo.png";
+import Button from "../common/button";
 
 interface Props {
   funnel?: Funnel;
@@ -10,34 +12,42 @@ const Preview: FC<Props> = ({ funnel }) => {
     document.body.style.backgroundColor = funnel?.bgColor || "#FFF";
   }, [funnel?.bgColor]);
 
+  //  bg - [#B330FE];
   if (!funnel) return <></>;
   return (
-    <div>
-      <div className="px-2 text-base font-normal gradient py-4 flex w-full justify-center bg-[#53D3F4] text-center font-inter">
-        <span className=" mx-2 font-inter font-semibold">
-          Previewing {funnel?.name}.
-        </span>
-        <div>
-          Want to try a different one? Then click
-          <span
-            className="ml-1 text-blood-orange cursor-pointer underline"
-            onClick={() => {
-              alert("soon");
-            }}
-          >
-            here
-          </span>
-          .
+    <>
+      <div className="z-50 text-white fixed top-0 left-0 w-full py-4 flex flex-col justify-center backdrop-blur border-b border-b-gray-500/40 dark:border-b-white/30 font-medium dark:font-normal bg-gray-800/40">
+        <div className="w-full flex flex-row items-center justify-between min-h-[2.5rem] px-8 relative">
+          <div className="flex items-center">
+            <img
+              src={PerspectiveLogo}
+              className="object-contain w-14 h-10"
+              alt="logo"
+            />
+            <span className="text-black font-inter font-medium">
+              Perspective
+            </span>
+          </div>
+          <div>
+            <Button
+              bgColor="#023047"
+              size="text-xs"
+              onClick={() => {
+                alert("soon");
+              }}
+              text=" New Funnel"
+            />
+          </div>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-8 h-full p-4">
+      <div className="flex flex-col items-center gap-8 h-full p-4 mt-24">
         <>
           {funnel?.pages.map((p, i) => (
             <Page key={i} p={p as Page} />
           ))}
         </>
       </div>
-    </div>
+    </>
   );
 };
 
